@@ -1,10 +1,10 @@
-## List Listening Ports
+## list‑listening‑ports.sh
 
-This script enumerates all listening TCP and UDP ports on the system, providing a JSON-formatted output for integration with security tools like OSSEC/Wazuh.
+This script enumerates all listening TCP and UDP ports on the system, providing a JSON-formatted output for integration with your SIEM.
 
 ### Overview
 
-The `List Listening Ports` script uses `lsof` to identify all processes with open listening ports, collecting protocol, port, PID, program name, and executable path. Output is formatted as JSON for active response workflows.
+The `list‑listening‑ports.sh` script uses `lsof` to identify all processes with open listening ports, collecting protocol, port, PID, program name, and executable path. Output is formatted as JSON for active response workflows.
 
 ### Script Details
 
