@@ -55,7 +55,7 @@ collect_ports() {
   while read -r line; do
     cmd=$(echo "$line" | awk '{print $1}')
     pid=$(echo "$line" | awk '{print $2}')
-    proto=$(echo "$line" | grep -o 'TCP\|UDP' | tr 'A-Z' 'a-z')
+    proto=$(echo "$line" | grep -o 'TCP\|UDP' | tr '[:upper:]' '[:lower:]')
     port=$(echo "$line" | grep -Eo ':[0-9]+(\)|$| )' | grep -Eo '[0-9]+' | tail -n1)
     [ -z "$port" ] && port="unknown"
 
@@ -76,7 +76,6 @@ collect_ports() {
 
 ports_list=$(collect_ports | paste -sd "," -)
 [ -z "$ports_list" ] && ports_list=""
-
 ports_json="[$ports_list]"
 
 ts=$(date --iso-8601=seconds 2>/dev/null || date '+%Y-%m-%dT%H:%M:%S%z')
