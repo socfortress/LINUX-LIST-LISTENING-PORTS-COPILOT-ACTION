@@ -3,37 +3,7 @@
   "description": "Lists all currently open TCP and UDP listening ports, including process details such as protocol, port, PID, program name, and program path. Uses lsof to collect active listening sockets and returns structured NDJSON output for auditing and threat detection. Writes results atomically to the Active Response log with .new fallback if locked.",
   "technology": "Linux",
   "icon": "linux",
-  "script_parameters": [
-    {
-      "name": "ARLog",
-      "type": "string",
-      "required": false,
-      "description": "Active Response NDJSON output path (atomic overwrite; falls back to .new if locked).",
-      "default": "/var/ossec/active-response/active-responses.log"
-    },
-    {
-      "name": "LogPath",
-      "type": "string",
-      "required": false,
-      "description": "Path to the rotating human-readable script log.",
-      "default": "/tmp/ListListeningPorts-script.log"
-    },
-    {
-      "name": "LogMaxKB",
-      "type": "integer",
-      "required": false,
-      "description": "Maximum size of the log file (KB) before rotation.",
-      "default": 100
-    },
-    {
-      "name": "LogKeep",
-      "type": "integer",
-      "required": false,
-      "description": "Number of rotated log files to keep.",
-      "default": 5
-    }
-  ],
-  "repo_url": "https://raw.githubusercontent.com/socfortress/LINUX-LIST-LISTENING-PORTS-COPILOT-ACTION/refs/heads/main/",
+  "repo_url": "https://raw.githubusercontent.com/socfortress/LINUX-LIST-LISTENING-PORTS-COPILOT-ACTION/refs/heads/main/list-listening-ports.sh",
   "script_name": "list-listening-ports.sh",
   "version": "1.0.0",
   "last_updated": "2025-08-23T00:00:00Z"
